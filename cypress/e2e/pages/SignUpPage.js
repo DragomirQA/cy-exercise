@@ -9,7 +9,9 @@ elements = {
     emailField : () => cy.get('#email_address'),
     passwordField : () => cy.get('#password'),
     confirmPasswordField : () => cy.get('#password-confirmation'),
-    createAnAccountButton : () => cy.get('#form-validate > .actions-toolbar > div.primary > .action > span')
+    createAnAccountButton : () => cy.get('#form-validate > .actions-toolbar > div.primary > .action > span'),
+    messageSuccess : () => cy.get('.message-success'),
+
 }
 
 fillFirstNameField(firstNameAnyText) {
@@ -33,7 +35,7 @@ fillConfirmPasswordField(confirmPasswordAnyText) {
 }
 
 clickCreateAnAccountButton() {
-    this.elements.createAnAccountButton().click;
+    this.elements.createAnAccountButton().click();
 }
 
 }
