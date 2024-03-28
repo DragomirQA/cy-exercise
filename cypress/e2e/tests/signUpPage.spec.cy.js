@@ -7,14 +7,16 @@ const signUpPage = new SignUpPage();
 describe('Creating account test', () => {
 
     it('Creating account: happy flow', () => {
+        const randomNumber = Date.now();
         cy.visit('https://magento.softwaretestingboard.com/customer/account/create/');
         signUpPage.fillFirstNameField('Ika');
         signUpPage.fillLastNameField('Prase');
-        signUpPage.fillEmailField('mudro_prasence1989@oink.com');
+        signUpPage.fillEmailField('mudro_prasence1989' + randomNumber + '@oink.com');
         signUpPage.fillPasswordField('Divlja89svinjica!@')
         signUpPage.fillConfirmPasswordField('Divlja89svinjica!@');
         signUpPage.clickCreateAnAccountButton();
         signUpPage.elements.messageSuccess().should('be.visible');
+        
         
     })
 
