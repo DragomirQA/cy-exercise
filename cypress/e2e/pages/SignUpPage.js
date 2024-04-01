@@ -11,6 +11,7 @@ elements = {
     confirmPasswordField : () => cy.get('#password-confirmation'),
     createAnAccountButton : () => cy.get('#form-validate > .actions-toolbar > div.primary > .action > span'),
     messageSuccess : () => cy.get('.message-success'),
+    messageError : () => cy.get('.message-error > div'),
 
 }
 
