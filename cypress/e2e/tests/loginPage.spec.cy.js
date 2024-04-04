@@ -28,13 +28,16 @@ describe('Login tests', () => {
     })
 
 
-    // it('Login test: unregistered user', () => {
+    it('Login test: unregistered user', () => {
        
-    //     cy.visit('https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS9jdXN0b21lci9hY2NvdW50L2NyZWF0ZS8%2C/');
-    //     loginPage.fillEmailField('alien@mars.com');
-    //     loginPage.fillPasswordField('Alienpass');
-    //     loginPage.clickSignInButton();
+        cy.visit('https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS9jdXN0b21lci9hY2NvdW50L2NyZWF0ZS8%2C/');
+        loginPage.fillEmailField('alien@mars.com');
+        loginPage.fillPasswordField('Alienpass');
+        loginPage.clickSignInButton();
+        loginPage.elements.messageError().should('be.visible');
+        //Za asertaciju sam hteo da bude have.class ali nikako nisam mogao da uradim kako treba,
+        //tako da za sada ostaje asertacija be.visible :-/
 
-    // })
+    })
 
 })
