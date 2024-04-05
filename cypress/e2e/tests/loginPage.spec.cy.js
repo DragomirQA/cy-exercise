@@ -24,6 +24,7 @@ describe('Login tests', () => {
         loginPage.fillPasswordField('Svinjica89');
         loginPage.clickSignInButton();
         loginPage.elements.myAccountTitle().should('be.visible');
+        cy.url().should('eq', 'https://magento.softwaretestingboard.com/customer/account/');
 
     })
 
@@ -35,8 +36,7 @@ describe('Login tests', () => {
         loginPage.fillPasswordField('Alienpass');
         loginPage.clickSignInButton();
         loginPage.elements.messageError().should('be.visible');
-        //Za asertaciju sam hteo da bude have.class ali nikako nisam mogao da uradim kako treba,
-        //tako da za sada ostaje asertacija be.visible :-/
+        
 
     })
 
