@@ -8,7 +8,7 @@ describe('Login tests', () => {
 
     it('Login test: unsuccessfull login', () => {
        
-        cy.visit('https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS9jdXN0b21lci9hY2NvdW50L2NyZWF0ZS8%2C/');
+        cy.visit('/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS9jdXN0b21lci9hY2NvdW50L2NyZWF0ZS8%2C/');
         loginPage.fillEmailField('prasulence@oink.com');
         loginPage.fillPasswordField('Wrongpass');
         loginPage.clickSignInButton();
@@ -19,7 +19,7 @@ describe('Login tests', () => {
 
     it('Login test: successfull login', () => {
        
-        cy.visit('https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS9jdXN0b21lci9hY2NvdW50L2NyZWF0ZS8%2C/');
+        cy.visit('/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS9jdXN0b21lci9hY2NvdW50L2NyZWF0ZS8%2C/');
         loginPage.fillEmailField('prasulence@oink.com');
         loginPage.fillPasswordField('Svinjica89');
         loginPage.clickSignInButton();
@@ -31,7 +31,7 @@ describe('Login tests', () => {
 
     it('Login test: unregistered user', () => {
        
-        cy.visit('https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS9jdXN0b21lci9hY2NvdW50L2NyZWF0ZS8%2C/');
+        cy.visit('/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS9jdXN0b21lci9hY2NvdW50L2NyZWF0ZS8%2C/');
         loginPage.fillEmailField('alien@mars.com');
         loginPage.fillPasswordField('Alienpass');
         loginPage.clickSignInButton();

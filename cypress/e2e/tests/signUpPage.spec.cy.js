@@ -8,7 +8,7 @@ describe('Creating account test', () => {
 
     it('Creating account: happy flow', () => {
         const randomNumber = Date.now();
-        cy.visit('https://magento.softwaretestingboard.com/customer/account/create/');
+        cy.visit('/customer/account/create/');
         signUpPage.fillFirstNameField('Ika');
         signUpPage.fillLastNameField('Prase');
         signUpPage.fillEmailField('mudro_prasence1989' + randomNumber + '@oink.com');
@@ -20,7 +20,7 @@ describe('Creating account test', () => {
     })
 
     it('Creating account: already existing email', () => {
-        cy.visit('https://magento.softwaretestingboard.com/customer/account/create/');
+        cy.visit('/customer/account/create/');
         signUpPage.fillFirstNameField('Ika');
         signUpPage.fillLastNameField('Prase');
         signUpPage.fillEmailField('mudro_prasence1989@oink.com');
