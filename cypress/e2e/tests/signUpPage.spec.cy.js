@@ -1,14 +1,18 @@
 // <reference types="cypress"/>}
 
+import { beforeEach } from 'mocha';
 import SignUpPage from '../pages/SignUpPage';
 
 const signUpPage = new SignUpPage();
 
 describe('Creating account test', () => {
 
+    beforeEach('Test setup', () => {
+        cy.visit('/customer/account/create/');
+    })
+
     it('Creating account: happy flow', () => {
         const randomNumber = Date.now();
-        cy.visit('/customer/account/create/');
         signUpPage.fillFirstNameField('Ika');
         signUpPage.fillLastNameField('Prase');
         signUpPage.fillEmailField('mudro_prasence1989' + randomNumber + '@oink.com');
@@ -20,7 +24,6 @@ describe('Creating account test', () => {
     })
 
     it('Creating account: already existing email', () => {
-        cy.visit('/customer/account/create/');
         signUpPage.fillFirstNameField('Ika');
         signUpPage.fillLastNameField('Prase');
         signUpPage.fillEmailField('mudro_prasence1989@oink.com');
