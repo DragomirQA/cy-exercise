@@ -1,6 +1,8 @@
 // <reference types="cypress"/>}
 
 import LoginPage from '../pages/LoginPage';
+import validUser from '../../fixtures/valid_user.json';
+import invalidUser from '../../fixtures/invalid_user.json';
 
 const loginPage = new LoginPage;
 
@@ -12,8 +14,8 @@ describe('Login tests', () => {
     })
 
     it('Login test: unsuccessfull login', () => {
-        loginPage.fillEmailField('prasulence@oink.com');
-        loginPage.fillPasswordField('Wrongpass');
+        loginPage.fillEmailField(validUser.email);
+        loginPage.fillPasswordField(invalidUser.password);
         loginPage.clickSignInButton();
         loginPage.elements.messageError().should('have.text', 'The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.')
 
@@ -21,8 +23,8 @@ describe('Login tests', () => {
 
 
     it('Login test: successfull login', () => {
-        loginPage.fillEmailField('prasulence@oink.com');
-        loginPage.fillPasswordField('Svinjica89');
+        loginPage.fillEmailField(validUser.email);
+        loginPage.fillPasswordField(validUser.password);
         loginPage.clickSignInButton();
         loginPage.elements.myAccountTitle().should('be.visible');
         cy.url().should('eq', 'https://magento.softwaretestingboard.com/customer/account/');
@@ -31,8 +33,8 @@ describe('Login tests', () => {
 
 
     it('Login test: unregistered user', () => {
-        loginPage.fillEmailField('alien@mars.com');
-        loginPage.fillPasswordField('Alienpass');
+        loginPage.fillEmailField(invalidUser.email);
+        loginPage.fillPasswordField(invalidUser.password);
         loginPage.clickSignInButton();
         loginPage.elements.messageError().should('be.visible');
         
