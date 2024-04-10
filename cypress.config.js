@@ -6,5 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     baseUrl: 'https://magento.softwaretestingboard.com',
+    defaultCommandTimeout: 6000,
+    watchForFileChanges: false,
   },
 });
