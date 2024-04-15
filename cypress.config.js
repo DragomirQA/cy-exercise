@@ -8,5 +8,6 @@ module.exports = defineConfig({
     baseUrl: 'https://magento.softwaretestingboard.com',
     defaultCommandTimeout: 6000,
     watchForFileChanges: false,
+    screenshotOnRunFailure: true,
   },
 });
