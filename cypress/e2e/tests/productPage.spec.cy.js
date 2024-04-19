@@ -36,5 +36,27 @@ describe('Products tests', () => {
         })
     })
 
+    it('Jackets: Validate each image opens a product', () => {
+
+        cy.visit('/women/tops-women/jackets-women.html');
+        productPage.elements.images().each((element, i, list) => {
+            cy.wrap(element).click();
+            cy.wait(4000);
+            cy.go('back');
+    })
+})
+
+it.only('Jackets: Validate drop down menu', () => {
+    cy.visit('/women/tops-women/jackets-women.html');
+    cy.get('#limiter').select('12', {force: true});
+    cy.wait(2000);
+    cy.get('#limiter').select('24', {force: true});
+    cy.wait(2000);
+    cy.get('#limiter').select('36', {force: true});
+    cy.wait(2000);
+
+
+})
+
 
 })
